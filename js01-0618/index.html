@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+
+<body>
+    <!-- alert();訊息視窗 -->
+    <!-- onclick => 左鍵點擊一下的事件行為 -->
+    <button onclick="alert('Hi');">打招呼</button>
+    <button onclick="javascript:alert('Hello');">打招呼 2</button>
+
+    <!-- 使用超連結時，使用 js 語法才需要前綴詞「javascript:」-->
+    <a href="javascript:alert('Hi 3');">搭招呼 3</a>
+
+    <!-- 自行撰寫 js 在目前檔案中 -->
+    <script>
+        console.log(123);
+        document.write(`hello`);
+    </script>
+
+    <!-- 載入專案中的外部檔案 -->
+    <!-- 由內往外一層 => ../ -->
+    <!-- 由內往外二層 => ../../ -->
+    <!-- 由外往內一層 => ./資料夾名稱/OOO.js -->
+    <!-- <script src="./js/js0618-1.js"></script> -->
+
+    <!-- 載入模組化的檔案 -->
+    <!-- <script type="module" src=""></script> -->
+</body>
+
+</html>
