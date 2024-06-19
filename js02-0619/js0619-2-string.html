@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 駝峰式命名 -->
+    <!-- 大駝峰：每個單字字首大寫 -->
+    <!-- 小駝峰：第二個單字開始字首大寫 -->
+    <!-- 字串變數 -->
+    <script>
+        let catName = "皮皮";
+        console.log(`貓的名字:${catName}`);
+        let catAge = 7;
+        console.log(`貓的年紀:${catAge}歲`);
+        catAge = "7";
+        // 取得資料型態
+        console.log(typeof (catAge));
+        // 未轉換為數值
+        console.log(`貓的年紀:${catAge + 5}歲`);
+        // 已轉換為數值
+        console.log(`貓的年紀:${Number(catAge) + 5}歲`);
+        // 變數轉換成數值
+        catAge = Number(catAge);
+        console.log(typeof (catAge));
+
+        // 浮點數 => 帶有小數點資料
+        let pi = 3.14;
+        let r = 6;
+        let area = pi * r * r;
+        console.log(area);
+        console.log(parseInt(area)); //取整數（無條件捨去到整數位）
+        console.log(area.toFixed(2)); //取出小數點二位，回傳型態為字串
+        console.log(Number(area.toFixed(2)) + 1); //若要運算，必須使用 Number() 轉換
+    </script>
+</body>
+
+</html>
