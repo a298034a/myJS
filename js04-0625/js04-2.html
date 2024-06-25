@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //輸入血型
+        let bloodType = prompt('輸入血型 A B AB O');
+
+        if (bloodType == null) {
+            document.write('取消');
+        }
+        else {
+            //按確定
+            bloodType = bloodType.trim().toUpperCase();;//去除空白 轉大寫 再指派回 bloodType
+
+            if (bloodType == "A") {
+                document.write('血型為:A型');
+            }
+            else if (bloodType == "B") {
+                document.write('血型為:B型');
+            }
+            else if (bloodType == "O") {
+                document.write('血型為:O型');
+            }
+            else if (bloodType == "AB") {
+                document.write('血型為:AB型');
+            }
+            else {
+                document.write('輸入錯誤');
+            }
+        }
+
+        //換行
+        document.write("<br>");
+
+        let bloodType2 = prompt('輸入血型 A B AB O');
+
+        if (bloodType2 == null) {
+            document.write('取消');
+        }
+        else {
+            // case "AB":
+            // case "ab":
+            // case "Ab":
+            // case "aB": 多條件寫法
+            switch (bloodType2.trim().toUpperCase()) {
+                case "":
+                    document.write('尚未輸入血型');
+                    break;
+                case "A":
+                    document.write('血型為:A型');
+                    break;
+                case "B":
+                    document.write('血型為:B型');
+                    break;
+                case "O":
+                    document.write('血型為:O型');
+                    break;
+                case "AB":
+                    document.write('血型為:AB型');
+                    break;
+                default:
+                    document.write('輸入錯誤');
+                    break;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
