@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let bingoNum = 66;
+        for (let i = 1; i <= 3; i++) {
+            let result = prompt("請輸入數字");
+            if (result == null) {
+                document.write(`第${i}次：按了取消<br>`);
+            }
+            else {
+                let resultNum = Number(result);
+
+                if (isNaN(resultNum)) {
+                    document.write(`第${i}次：輸入了非數字<br>`);
+                }
+                else if(resultNum == ""){
+                    document.write(`第${i}次：輸入了空值<br>`);
+                }
+                else {
+                    document.write(`第${i}次：${result}<br>`);
+
+                    if (resultNum === bingoNum) {
+                        document.write("答對了");
+                        break;
+                    }
+                }
+            }
+
+            if (i == 3) {
+                document.write("挑戰失敗");
+            }
+        }
+    </script>
+</body>
+
+</html>
