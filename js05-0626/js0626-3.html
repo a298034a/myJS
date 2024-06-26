@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //ex7: 
+        //彈出輸入視窗=>prompt()
+        //輸入運算起始值
+        //輸入運算結束值
+        //算出奇數合
+        //算出偶數合
+
+        const start = prompt("輸入運算起始值");
+        const end = prompt("輸入運算結束值");
+
+        if (start == null || end == null) {
+            console.log(`按了取消`);
+        }
+        else {
+            let startNum = Number(start);
+            let endNum = Number(end);
+
+            if (isNaN(startNum) || isNaN(endNum)) {
+                console.log(`輸入了非數值`);
+            }
+            else {
+                let oddSum = 0;//奇數合
+                let evenSum = 0;//偶數合
+
+                //起始值大於結束值時 先做調換
+                if (startNum > endNum) {
+                    let temp = startNum;
+                    startNum = endNum;
+                    endNum = temp;
+                }
+
+                for (let i = startNum; i <= endNum; i++) {
+                    if (i % 2 == 0) {
+                        evenSum += i;
+                    }
+                    else {
+                        oddSum += i;
+                    }
+                }
+
+                /* if (startNum <= endNum) {//起始值小於結束值
+                    for (let i = startNum; i <= endNum; i++) {
+                        if (i % 2 == 0) {
+                            evenSum += i;
+                        }
+                        else {
+                            oddSum += i;
+                        }
+                    }
+                }
+                else {//起始值大於結束值
+                    for (let i = startNum; i >= endNum; i--) {
+                        if (i % 2 == 0) {
+                            evenSum += i;
+                        }
+                        else {
+                            oddSum += i;
+                        }
+                    }
+                } */
+
+                console.log(`${start}-${end}的奇數合=>${oddSum}`);
+                console.log(`${start}-${end}的偶數合=>${evenSum}`);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
