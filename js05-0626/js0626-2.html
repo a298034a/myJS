@@ -9,7 +9,52 @@
 
 <body>
     <script>
+        //ex6: 用迴圈分別找出 1~10 中 3 和 5 的倍數，迴圈後顯示下列結果
+        //1~10 中 3 的倍數有: 3 6 9
+        //1~10 中 3 的倍數合計為: 3+6+9=18
+        //1~10 中 5 的倍數有: 5 10
+        //1~10 中 5 的倍數合計為: 5+10=15
 
+        let three = "";
+        let five = "";
+
+        let sumThree = 0;
+        let formulaThree = "";
+
+        let sumFive = 0;
+        let formulaFive = "";
+
+        for (let i = 1; i <= 10; i++) {
+            if (i % 3 == 0) {
+                three += i + " ";
+                
+                formulaThree += i;
+                if (i != 9){
+                    formulaThree += "+";
+                }
+                
+                sumThree += i;
+            }
+
+            if (i % 5 == 0) {
+                five += i + " ";
+
+                formulaFive += i;
+                if (i != 10) {
+                    formulaFive += "+";
+                }
+
+                sumFive += i;
+            }
+        }
+
+        document.write(`1~10 中 3 的倍數: ${three}`);
+        document.write('<br>');
+        document.write(`1~10 中 3 的倍數合計為: ${formulaThree}=${sumThree}`);
+        document.write('<hr>');
+        document.write(`1~10 中 5 的倍數: ${five}`);
+        document.write('<br>');
+        document.write(`1~10 中 5 的倍數合計為: ${formulaFive}=${sumFive}`);
     </script>
 </body>
 
