@@ -21,7 +21,7 @@
                 if (isNaN(resultNum)) {
                     document.write(`第${i}次：輸入了非數字<br>`);
                 }
-                else if(resultNum == ""){
+                else if (resultNum == "") {
                     document.write(`第${i}次：輸入了空值<br>`);
                 }
                 else {
@@ -37,6 +37,23 @@
             if (i == 3) {
                 document.write("挑戰失敗");
             }
+        }
+
+        //老師的解答
+        let ans = "n";
+        for (let i = 1; i <= 3; i++) {
+            let result = prompt("請輸入數字");
+            document.write(`第${i}次:${result}<br>`);
+
+            if (result == "99") {
+                document.write("答對了");
+                ans = "y";
+                break;
+            }
+        }
+
+        if (ans == "n") {
+            document.write("挑戰失敗");
         }
     </script>
 </body>
