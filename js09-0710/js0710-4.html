@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>    
+    <script>
+        //陣列中找出 100 以上的資料
+        let arr1 = [1, 3, 7, 100, 234];
+
+        //filter
+        console.log("--- filter ---");
+        let target = arr1.filter((n) => n >= 100);
+        console.log(target);
+
+        //for
+        console.log("--- for ---");
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] >= 100) {
+                console.log(arr1[i]);
+            }
+        }
+
+        //while
+        console.log("--- while ---");
+        let i = 0;
+        while (i < arr1.length) {
+            if (arr1[i] >= 100) {
+                console.log(arr1[i]);
+            }
+            i++;
+        }
+
+        //do-while
+        console.log("--- do-while ---");
+        i = 0;
+        do {
+            if (arr1[i] >= 100) {
+                console.log(arr1[i]);
+            }
+            i++;
+        }while (i < arr1.length);
+    </script>
+</body>
+</html>
