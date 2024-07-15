@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log("大樂透號碼: " + getLotteryNumber());
+        console.log("特別號: " + Math.floor(Math.random() * 49) + 1);
+
+        function getLotteryNumber() {
+            let results = [];
+
+            //持續執行，直到取出六個號碼
+            while (results.length < 6) {
+                let num = Math.floor(Math.random() * 49) + 1;
+                //號碼未重複時，加入陣列
+                if (!results.includes(num)) {
+                    results.push(num);
+                }
+            }
+
+            //遞增排序結果
+            results.sort((a, b) => {
+                return a - b;
+            });
+
+            return results;
+        }
+    </script>
+</body>
+
+</html>
