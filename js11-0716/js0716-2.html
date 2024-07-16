@@ -39,25 +39,33 @@
 
             return arrNum;
         }
-        
+
         let logGameNum = prompt(`請輸入樂透號碼代號=>\n1.大樂透 2.威力彩 3.今彩539`);
 
-        switch (Number(logGameNum)) {
-            case 1:
+        switch (logGameNum) {
+            case '1':
                 console.log("大樂透號碼: " + getLotNum(49, 6));
-                console.log("特別號: " + getLotNum(49, 1));
+                console.log("特別號: " + getRandNum(49));
                 break;
-            case 2:
+            case '2':
                 console.log("威力彩號碼: " + getLotNum(38, 6));
-                console.log("特別號: " + getLotNum(8, 1));
+                console.log("特別號: " + getRandNum(8));
                 break;
-            case 3:
+            case '3':
                 console.log("今彩539號碼: " + getLotNum(39, 5));
                 break;
             default:
                 console.log("請輸入 1~3 其中一個數字");
                 break;
         }
+
+        // item => 樂透代號
+        // count => 第一區號碼次數
+        // no1 => 第一區最大值
+        // no2 => 第二區最大值
+        function getLotNum(item, count, no1, no2 = 0) {
+            
+        }        
     </script>
 </body>
 
