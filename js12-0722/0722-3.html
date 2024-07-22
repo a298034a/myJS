@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 建立一個加法運算函式
+        // 當參數值的「參數值個數」與「參數個數」不一定相同時
+        // 可以使用「其餘參數」寫法 => ... => 參數資列會形成一個陣列
+        function add(...numbers) {
+            let total = 0;
+            console.log(numbers);
+            for (let n of numbers) {
+                total += n;
+            }
+            return total;
+        }
+
+        console.log(add(1, 2, 3));
+        console.log(add(5, 3));
+    </script>
+</body>
+
+</html>

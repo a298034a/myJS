@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 建立物件樣板
+        // 習慣物件樣板名稱字首為大寫
+        function Sdata(sid, sName, html, css, javascript, ...other) {
+            this.sid = sid;
+            this.sName = sName;
+            this.html = html;
+            this.css = css;
+            this.javascript = javascript;
+            this.showData = () => {
+                console.log(`${this.sid}號${this.sName}同學，成績總分為${this.html + this.css + this.javascript}分`);
+                console.log(`身高: ${other[0]}, 體重: ${other[1]}`);
+            }
+        }
+
+        //使用物件樣板
+        let s1 = new Sdata("s001", "王小明", 95, 80, 100, 157, 50);
+        s1.showData();
+
+        let s2 = new Sdata("s002", "陳小華", 100, 100, 90, '沒有資料', 60);
+        s2.showData();
+
+        let s3 = new Sdata("s003", "張小嵐", 98, 98, 98, '沒有資料', '沒有資料');
+        s3.showData();
+
+        //計算全班各科總分
+        // console.log(`全班 html 總分: ${s1.html + s2.html + s3.html}`);
+        // console.log(`全班 css 總分: ${s1.css + s2.css + s3.css}`);
+        // console.log(`全班 javascript 總分: ${s1.javascript + s2.javascript + s3.javascript}`);
+
+        //陣列物件
+        let arrObj = [s1, s2, s3];
+        let totHtml = 0;
+        let totCss = 0;
+        let totJs = 0;
+
+        for (let i = 0; i < arrObj.length; i++) {
+            totHtml += arrObj[i].html;
+            totCss += arrObj[i].css;
+            totJs += arrObj[i].javascript;
+        }
+
+        console.log(`全班 html 總分: ${totHtml}`);
+        console.log(`全班 css 總分: ${totCss}`);
+        console.log(`全班 javascript 總分: ${totJs}`);
+    </script>
+</body>
+
+</html>
