@@ -13,6 +13,20 @@
 
 ## js12-物件樣板、陣列物件、其餘參數
 
+## js13-DOM
+getElementById() => 根據 id 屬性<br>
+getElementByName() => 根據 name 屬性
+```
+大多應用在表單元素
+選項按鈕(radio)
+核取方塊(checkBox)
+下拉式清單(comboBox)
+```
+getElementByTagName() => 根據 HTML 標籤名稱<br>
+getElementByClassName() => 根據類別名稱<br>
+querySelector() => 根據 CSS 選擇器取得第一個元素<br>
+querySelectorAll() => 根據 CSS 選擇器取得全部元素
+
 ## Homework
 
 ### Bingo Number
