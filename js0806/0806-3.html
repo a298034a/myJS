@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 事件基本語法 -->
+    <!-- <div 事件名稱="程式碼">標籤內容</div> -->
+    <!-- <button 事件名稱="程式碼">按鈕內容</button> -->
+
+    <div onclick="changeP('p1')">標題1</div>
+    <p id="p1" class="p1">Lorem sit, amet consectetur adipisicing elit.</p>
+
+    <div onclick="changeP('p2')">標題2</div>
+    <p id="p2" class="p2">Lorem ipsum dolor sit amet.</p>
+
+    <script>
+        function changeP(className) {
+            document.getElementsByClassName(className)[0].innerHTML = 'Hello';
+        }
+
+        function changeDiv() {
+            // 變更網頁 body 內容
+            // document.body.innerHTML = 'hello';
+
+            // 取得第一個段落
+            console.log(document.querySelector('p'));
+            // 取得所有段落 1
+            console.log(document.querySelectorAll('p'));
+            // 取得所有段落 2
+            console.log(document.getElementsByTagName('p'));
+
+            // 變更段落內容
+            // document.querySelector('p').innerHTML = 'hello';
+            // 產生集合陣列物件
+            // document.getElementsByTagName('p')[0].innerHTML = 'hello';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <span onclick="changeToAbout();">關於我</span>
+        <span onclick="changeToExps();">學經歷</span>
+        <span onclick="changeToContact();">聯絡我</span>
+        <span onclick="changeToNews();">最新活動</span>
+    </div>
+    <hr>
+    <div id="about">大家好，我是XXX</div>
+    <div id="exps" style="display: none;">Lorem ipsum, adipisicing elit. Itaque, repellendus!</div>
+    <div id="contact" style="display: none;">gmail.com</div>
+    <div id="news" style="display: none;">最新活動內容區</div>
+    <script>
+        // 先取得操作的標籤div
+        let aboutDiv = document.querySelector('#about');
+        let expsDiv = document.querySelector('#exps');
+        let contactDiv = document.querySelector('#contact');
+        let newsDiv = document.querySelector('#news');
+
+        function closeDiv() {
+            aboutDiv.style.display = 'none';
+            expsDiv.style.display = 'none';
+            contactDiv.style.display = 'none';
+            newsDiv.style.display = 'none';
+        }
+
+        //關於我
+        function changeToAbout() {
+            closeDiv();
+            aboutDiv.style.display = 'block';
+        }
+
+        //學經歷
+        function changeToExps() {
+            closeDiv();
+            expsDiv.style.display = 'block';
+        }
+
+        function changeToContact() {
+            closeDiv();
+            contactDiv.style.display = 'block';
+        }
+
+        function changeToNews() {
+            closeDiv();
+            newsDiv.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
