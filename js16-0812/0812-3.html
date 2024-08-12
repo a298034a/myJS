@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="uid">會員編號</label>
+        <input type="text" id="uid" size="10" maxlength="5"><br>
+        <label for="mobile">手機號碼</label>
+        <input type="text" id="mobile" size="10" maxlength="10"><br>
+        <span id="errMsg"></span><br>
+        <input type="submit" value="送出">
+    </form>
+
+    <script>
+        let uid = document.getElementById('uid');
+        uid.addEventListener('blur', function (e) {
+            checkWordNum(e, 5, '會員編號');
+        });
+
+        let mobile = document.getElementById('mobile');
+        mobile.addEventListener('blur', function (e) {
+            checkWordNum(e, 10, '手機號碼');
+        });
+
+        function checkWordNum(e, numLength, lblName) {
+            //取得 errMsg 位置
+            let errMsg = document.getElementById('errMsg');
+
+            if (e.value.length != numLength) {
+                errMsg.textContent = `${lblName}必須是${numLength}個字`;
+            }
+            else {
+                errMsg.textContent = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn2">顯示訊息4</button>
+    <script>
+        //無法帶標籤對應的事件名稱，所以要自己寫出來
+        //let btn2 = document.querySelector('#btn2');
+
+        let btn2 = document.getElementById('btn2');
+        btn2.onclick = sayHi2; //此方法後面不用加()
+        function sayHi2() {
+            alert('早安4');
+        }
+
+        btn2.onclick = () => {
+            alert('早安4');
+        }
+    </script>
+</body>
+
+</html>
