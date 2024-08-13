@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            margin: 100px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div>
+            <img id="pic" onmouseover="changPic();" onmouseout="restorePic();" src="./Computer.png" alt="">
+        </div>
+    </div>
+    <script>
+        function changPic() {
+            let pic = document.getElementById('pic');
+            pic.src = './CryptoApp.png';
+        }
+
+        function restorePic(){
+            let pic = document.getElementById('pic');
+            pic.src = './Computer.png';
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            display: flex;
+            align-items: center;
+        }
+
+        img{
+            display: block;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;        
+        }
+        figure{
+            min-width: 500px;
+            border: 1px solid black;
+        }
+        button{
+            width: 125px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="btn-container">
+            <button id="btn-accomodation"><img src="./Accomodation.png" alt=""></button>
+            <button id="btn-gear"><img src="./Gear.png" alt=""></button>
+            <button id="btn-home"><img src="./Home.png" alt=""></button>
+            <button id="btn-bag"><img src="./MoneyBag.png" alt=""></button>
+        </div>
+        <figure>
+            <img id="pic" src="./Accomodation.png" alt="">
+        </figure>
+    </div>
+
+    <script>
+        let pic = document.getElementById('pic');
+        let btnAccomodation = document.getElementById('btn-accomodation');
+        let btnGear = document.getElementById('btn-gear');
+        let btnHome = document.getElementById('btn-home');
+        let btnBag = document.getElementById('btn-bag');
+
+        btnAccomodation.addEventListener('click', () => {
+            changePic('./Accomodation.png');
+        });
+
+        btnGear.addEventListener('click', () => {
+            changePic('./Gear.png');
+        });
+
+        btnHome.addEventListener('click', () => {
+            changePic('./Home.png');
+        });
+
+        btnBag.addEventListener('click', () => {
+            changePic('./MoneyBag.png');
+        });
+
+        function changePic(src) {
+            pic.src = src;
+        }
+    </script>
+</body>
+
+</html>
