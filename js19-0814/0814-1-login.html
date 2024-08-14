@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li id="login_id">帳號：</li>
+            <li id="login_pw">密碼：</li>
+        </ul>
+    </div>
+    <script>
+        let data = window.localStorage;
+        console.log(data);
+
+        let uid = window.localStorage.getItem('uid');
+        let login_id = document.getElementById('login_id');
+        login_id.textContent = `帳號：${uid}`;
+
+        let pw = window.localStorage.getItem('pw');
+        let login_pw = document.getElementById('login_pw');
+        login_pw.textContent = `帳號：${pw}`;
+
+        if (uid = 'test' && pw == 'test123') {
+            alert('登入成功');
+        }
+        else {
+            alert('登入失敗');
+            //回登入頁
+            window.location.href = './0814-1.html'
+        }
+
+        //檢查帳密是否存在
+
+    </script>
+</body>
+
+</html>

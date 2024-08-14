@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="./0814-1-login.html">
+        <label for="uid">帳號</label>
+        <input type="text" id="uid">
+        <br>
+        <label for="pw">密碼</label>
+        <input type="text" id="pw">
+        <br>
+        <input id="btn" type="submit" value="登入1">
+        <input id="btn2" type="button" value="登入2">
+        <!-- <input type="password" name="" id=""> -->
+    </form>
+    <script>
+        const uid = document.getElementById('uid');
+        const pw = document.getElementById('pw');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', () => {
+            //存放資料於瀏覽器的 local storage
+            window.localStorage.setItem('uid', uid.value);
+            window.localStorage.setItem('pw', pw.value);
+        });
+
+        //使用跳轉頁面指令
+        let btn2 = document.getElementById('btn2');
+        btn2.addEventListener('click',()=>{
+            window.localStorage.setItem('uid', uid.value);
+            window.localStorage.setItem('pw', pw.value);
+            window.location.href = './0814-1-login.html';
+        });
+    </script>
+</body>
+
+</html>

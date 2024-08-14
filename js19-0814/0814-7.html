@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p,button{
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="web-select">請選擇一個網站</label>
+    <select name="webs" id="web-select">
+        <option value="">請選擇</option>
+        <option value="https://www.google.com.tw/?hl=zh_TW">Google</option>
+        <option value="https://tw.yahoo.com/">Yahoo</option>
+    </select>
+    <p id="result"></p>
+
+    <hr>
+
+    <label for="apply">我同意合約</label>
+    <input type="checkbox" name="apply" id="apply">
+    <p id="errMsg" style="visibility: hidden; color: red;">尚未同意合約</p>
+    <br>
+    <input type="button" value="提交" id="btn">
+
+    <script>
+        let webSelect = document.getElementById('web-select');
+        let result = document.getElementById('result');
+        webSelect.addEventListener('change', (event) => {
+            if (event.target.value != '') {
+                result.textContent = `你選擇了${event.target.selectedOptions[0].textContent}`;
+                window.open(`${event.target.value}`);
+            }
+            else {
+                result.textContent = '';
+            }
+        });
+
+        let apply = document.getElementById('apply');
+        let btn = document.getElementById('btn');
+        let errMsg = document.getElementById('errMsg');
+
+        btn.addEventListener('click', () => {
+            if (!apply.checked) {
+                errMsg.style.visibility = 'visible';
+            }
+            else {
+                errMsg.style.visibility = 'hidden';
+            }
+        });
+    </script>
+</body>
+
+</html>
