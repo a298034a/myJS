@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>課堂練習</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <script src="../javascripts/vendor.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"
+        integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="root"></div>
+        <script type="text/babel">
+            function App() {
+                return (
+                    <div style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        backgroundColor: "white",
+                        maxWidth: "700px",
+                        margin: "0 auto",
+                        padding: "24px 32px"
+                    }}>
+                        <h1 style={{ fontSize: "20px" }}>
+                            機場驚見「貓咪航警」值勤！日常任務曝光
+                        </h1>
+
+                        <img style={{ width: "100%", height: "100%", display: "block", objectFit: "contain" }} src="https://today-obs.line-scdn.net/0hgZbS31J_OHVfKijTP0pHImd8NARsTCJ8fUVzRnN5YBAmBit2akRrFnJ5ZFkiSiwif0lzEHMtYU0gTnZ0YA/w1200" alt="" />
+
+                        <p style={{ fontSize: "12px", color: "#949494" }}>
+                            ▲美國舊金山國際機場（SFO）就有一隻貓咪成為「航警」，但平時工作不是查違禁品，而是療癒人心。（圖／IG@sfowagbrigade）
+                        </p>
+
+                        <p>
+                            [NOWnews今日新聞] 在國際機場裡，常常能看到許多檢疫犬在大廳內工作的身影，避免違禁品流入國內，但「貓咪航警」可就幾乎沒人看過了吧！去年美國舊金山國際機場（SFO）就有一隻貓咪成為「航警」，但平時工作不是查違禁品，而是療癒人心，可愛模樣也掀起話題。
+                        </p>
+
+                        <p>
+                            舊金山國際機場是全世界旅客量第23大的機場，因此旅客更常出現千百種突發狀況，除了正常的檢疫犬，機場團隊也從2013年開始組建動物療癒團隊「Wag Brigade」，找來各種能安撫人心的小動物，在乘客出現緊張情緒時，就得靠牠們來撫慰人心。
+                        </p>
+
+                        <img src="https://today-obs.line-scdn.net/0hD-XH4naXGwJlMQukBVFkVV1nF3NWVwELRwBRYEgwTTRMHVpRUANIYRQ0RC4YA1RTRQMHZ0M0QDtMAFkGCQ/w1200" alt="" />
+
+                        <p style={{ fontSize: "12px", color: "#949494" }}>
+                            ▲「Wag Brigade」團隊有各種動物，每隻都是溫馴的航警。（圖／IG@sfowagbrigade）</p>
+                        <p>這些小動物也都是具有「動物治療師」認證，不只是個性溫和，還對於機場環境相當適應，並且能感受到人類的情緒，還會穿上可愛的航警制服，行走在機場大廳「執勤」，旅客們看到這些小航警，都可以大方靠近擁抱撫摸。</p>
+
+                        <p>過去
+                            <a style={{ color: "#4d73ff", textDecoration: "none" }} href="https://www.instagram.com/p/CtKDgnzJPFO/?utm_source=ig_embed">「Wag Brigade」</a>
+                            團隊中，許多都是狗狗，隨後也出現通過考驗的兔子、迷你豬等成員，隨後在2023年6月，終於有第一隻貓咪順利通過測驗，成為舊金山機場第一隻航警貓貓，牠就是乳牛貓杜克（Duke ）。</p>
+
+                        <img src="https://today-obs.line-scdn.net/0h4u7E8rs4a1oKPHv8alwUDTJqZys5WnFTKF8lbCg-YjguEH4NPwo4OSo9MXYvWyxfKgkgPSo8ZWsgCyUFNg/w1200" alt="" />
+
+                        <p style={{ fontSize: "12px", color: "#949494" }}>
+                            ▲杜克航警是高齡14歲的貓咪。（圖／IG@duke_therapy_cat）</p>
+
+                        <p>杜克（Duke ）其實是一隻14歲高齡的貓咪，牠曾經在街頭上流浪，隨後被好心的主人收養多年，性格相當溫順，最後再通過培訓後，成為符合「動物治療師」資格的貓咪，並成為第一隻機場執勤的貓咪。許多旅客得知有航警貓貓降臨後，紛紛驚呼「杜克穿制服太可愛了」 、「第一隻航警貓貓，這成就太偉大了」 、「好想知道杜克出勤的日期哦」 。</p>
+
+                        <a style={{ color: "#4d73ff", textDecoration: "none", marginBottom: "10px" }} href="http://line.me/ti/p/@nownews">立即加入NOWnews今⽇新聞官⽅帳號！跟上最HOT時事</a>
+
+                        <p>更多寵毛網新聞<br/>
+                            <a style={{ color: "#4d73ff", textDecoration: "none" }} href="https://www.nownews.com/news/6494952?utm_source=NaturalLink&utm_medium=lntoday&utm_campaign=20240818">最萌奧運金牌教練！黑色拉拉每天盯訓練　主人順利「金牌3連霸」</a><br/>
+                            <a style={{ color: "#4d73ff", textDecoration: "none" }} href="https://www.nownews.com/news/6493557?utm_source=NaturalLink&utm_medium=lntoday&utm_campaign=20240818">洛杉磯奧運不只棒球回歸！「1項目」等了128年：印度有機會拿金牌</a>
+                        </p>
+                    </div>
+                )
+            }
+
+            ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+        </script>
+    </main>
+</body>
+
+</html>
