@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 步驟一：載入 React, Bable -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./js/vendor.js"></script>
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <!-- 步驟2：載入根元素（root） -->
+    <div id="root"></div>
+
+    <!-- 步驟3：建立 React 元件 -->
+    <script type="text/babel">
+        function GetImg(props) {
+
+            //檢查有無年齡資料
+            let msgAge = '';
+            if (props.age == '') {
+                msgAge = "沒有提供年齡";
+            } else {
+                msgAge = props.age + "歲";
+            }
+
+            return (
+                <div className="card" style={{ width: "18rem" }}>
+                    <img title={props.title} src={props.imgUrl} className="card-img-top" alt="..." style={{
+                        border: props.border
+                    }} />
+                    <div className="card-body">
+                        <h5 className="card-title">{props.name}</h5>
+                        <p className="card-text">年齡:{msgAge}</p>
+                        <a href="#" className="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            )
+        }
+
+        function App() {
+            return (
+                <>
+                    <GetImg name="貓警長" age="14" border="3px dashed black" imgUrl="https://today-obs.line-scdn.net/0hgZbS31J_OHVfKijTP0pHImd8NARsTCJ8fUVzRnN5YBAmBit2akRrFnJ5ZFkiSiwif0lzEHMtYU0gTnZ0YA/w1200" />
+                </>
+            )
+        }
+        //步驟4：渲染（顯示）元件到根元素（root）上
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+
+</body>
+
+</html>

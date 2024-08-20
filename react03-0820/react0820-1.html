@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 步驟一：載入 React, Bable -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- 步驟2：載入根元素（root） -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function GetImg(props) {
+            // 建立圖片元件
+            return (
+                <img style={{
+                    width: "300px",
+                    border: "2px solid black",
+                    margin: "10px"
+                }} src={props.imgUrl} alt="" />
+            )
+        }
+
+        function App() {
+            // 建立圖片元件
+            return (
+                <div>
+                    <h2>呼叫圖片元件</h2>
+                    {/* 呼叫元件:擇一 */}
+                    {/* <GetImg></GetImg> */}
+                    {/* <GetImg /> */}
+                    {/* 使用屬性傳直給元件 */}
+                    {/* 元件使用 props 接收 */}
+                    <GetImg imgUrl="https://today-obs.line-scdn.net/0hgZbS31J_OHVfKijTP0pHImd8NARsTCJ8fUVzRnN5YBAmBit2akRrFnJ5ZFkiSiwif0lzEHMtYU0gTnZ0YA/w1200" />
+                    <GetImg imgUrl="https://images.pexels.com/photos/126407/pexels-photo-126407.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+                </div>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+
+</body>
+
+</html>
