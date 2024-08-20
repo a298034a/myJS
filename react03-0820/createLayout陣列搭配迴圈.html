@@ -94,7 +94,7 @@
                   products.map((item) => {
                     // 呼叫卡片元件
                     // 改用陣列傳值給元件
-                    return <Card title={item.title} price={item.price} desc={item.desc} btnName={item.btnName} />
+                    return <Card key={item.id} title={item.title} price={item.price} desc={item.desc} btnName={item.btnName} />
                   })
                 }
                 <h2>方案說明</h2>
