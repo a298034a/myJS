@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- JS 寫法 -->
+    <input type="text" id="input" value="abc">
+    <script>
+        let input = document.getElementById('input');
+        // change: 游標離開後觸發
+        input.addEventListener('change', () => {
+            console.log("change: " + input.value);
+        });
+
+        // keyup: 鍵盤彈上來時觸發
+        input.addEventListener('keyup', () => {
+            console.log("keyup: " + input.value);
+        });
+    </script>
+
+    <hr>
+
+    <!-- React 寫法 -->
+    <div id="root"></div>
+    <script type="text/babel">
+        // ReactHook - 狀態 useState
+        // 取得 useState 方法
+        const { useState } = React;
+
+        function App() {
+            //input 綁定 useState
+            const [text, setText] = useState("123");
+
+            return (
+                <div>
+                    {/* input 預設值須改用 defaultValue */}
+                    {/* 若要使用 value，要搭配 onChange 事件 */}
+                    {/* onChange 在 React 是即時觸發變更*/}
+                    <input type="text" id="input2" value={text}
+                        onChange={(e) => {
+                            setText(e.target.value);
+                            //console.log("change: " + text);
+                        }}
+                        // 失去焦點（游標）
+                        onBlur={() => {
+                            console.log("onBlur " + text);
+                        }}
+                        // 取得焦點（游標）
+                        onFocus={() => {
+                            console.log("onFocus " + text);
+                        }}
+                    />
+                    {/* 顯示文字方塊內容 */}
+                    <div>Input: {text}</div>
+                </div>
+            )
+        }
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+
+</body>
+
+</html>

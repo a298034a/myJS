@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        //建立搜尋元件
+        //#1 取出 useState 方法
+        const { useState } = React;
+
+        //#5 建立一個搜尋元件
+        /*
+            const 元件名稱 = ({元件參數1,元件參數2}) =>{
+                return (
+                    <>
+                        元件內容
+                    </>
+                )
+            }
+        */
+        const SearchBox = ({ text, onSearchHandler }) => {
+            return (
+                <>
+                    <label htmlFor="search2">搜尋</label>
+                    <input type="text"
+                        id="search2"
+                        className=""
+                        value={text}
+                        onChange={onSearchHandler}
+                    />
+                </>
+            )
+        }
+
+        function App() {
+            //#2 定義狀態
+            const [text, setText] = useState('請輸入任意字');
+
+            //#3 建立一個更新資料的函式
+            const onSearchHandler = (e) => {
+                setText(e.target.value);
+            }
+
+            //#4 加上「搜尋」標籤與樣式
+            return (
+                <div>
+                    {/*
+                    <label htmlFor="search">搜尋</label>
+                    <input type="text"
+                        id="search"
+                        className=""
+                        value={text}
+                        onChange={onSearchHandler}
+                    />
+                    <br />
+                    更新後的文字: {text}
+
+                    <hr />*/}
+
+                    {/*#6 渲染 SearchBox 元件*/}
+                    <SearchBox text={text} onSearchHandler={onSearchHandler} />
+                    <br />
+                    {/*#7 顯示更新後結果*/}
+                    更新後的文字: {text}
+                </div>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+
+</body>
+
+</html>
