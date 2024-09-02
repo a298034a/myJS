@@ -25,14 +25,16 @@
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
                 <script type="text/babel">
                     const { useState, useEffect, useRef } = React;
-                    // const currentPage  = useRef(1);
+
                     const api = 'https://api.unsplash.com/search/photos/';
                     const accessKey = 'lN_UScAV9qkvjnoRtoQZoGuCNt9vruB8TqI0NFuh-hs';
 
-                    const Card = ({ src }) => {
+                    const Card = ({ item }) => {
                         return (
                             <div className="card">
-                                <img src={src} className="card-img-top img-cover" alt="..." height="350" width="100%" />
+                                <img src={item.urls.regular} 
+                                className="card-img-top img-cover" 
+                                alt="..." height="350" width="100%" />
                             </div>
                         );
                     }
@@ -54,8 +56,8 @@
 
                         // 加入讀取
                         const [isLoading, setIsLoading] = useState(false);
-
                         // 改用傳參考的方式
+
                         // 使用useRef建立變數
                         const currentPage = useRef(1);
 
@@ -113,7 +115,7 @@
 
                                 // 假如（沒有載入圖片）且（垂直卷軸位置超過目前列表圖片的高度）
                                 // 則執行下一頁
-                                if (!isLoading && window.scrollY > height) {
+                                if (!isLoading.current && window.scrollY > height) {
                                     // 換頁，更新最新頁數
                                     currentPage.current = currentPage.current + 1;
                                     // 只是更新頁數，同關鍵字的資料不用覆蓋，因此補上false
@@ -139,7 +141,7 @@
                                     jsonData.map((item) => {
                                         return (
                                             <div className="col" key={item.id}>
-                                                <Card src={item.urls.regular} />
+                                                <Card item={item} />
                                             </div>
                                         )
                                     })
