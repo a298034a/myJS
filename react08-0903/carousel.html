@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        #carousel{
+            background-color: #ccc;
+            padding: 10px 20px 10px 0;
+        }
+        img {
+            vertical-align: bottom;
+            width: 150px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useEffect } = React;
+
+        function App() {
+            useEffect(() => {
+                $(function () {
+                    $("#carousel").jCarouselLite({
+                        auto: 1200, // 多久輪播一次
+                        scroll:1, // 每次捲動張數
+                        visible:3, // 顯示的張數
+                        speed:1000, // 輪播速度
+                    });
+                });
+            }, []);
+
+            return (
+                <>
+                    <h1>旋轉木馬</h1>
+                    <div id="carousel">
+                        <ul>
+                            <li><img src="./images/accessories1_s.jpg" alt="" /></li>
+                            <li><img src="./images/accessories2_s.jpg" alt="" /></li>
+                            <li><img src="./images/accessories3_s.jpg" alt="" /></li>
+                            <li><img src="./images/accessories4_s.jpg" alt="" /></li>
+                            <li><img src="./images/accessories5_s.jpg" alt="" /></li>
+                        </ul>
+                    </div>
+                </>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+    <script src="./jQuery/js/jquery-1.11.3.min.js"></script>
+    <script src="./jQuery/js/jquery.jcarousellite.min.js"></script>
+</body>
+
+</html>
