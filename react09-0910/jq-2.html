@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="./jQuery/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        #wrapper {
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .btnArea a {
+            color: red;
+            text-decoration: none;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        /* 隱藏彈出視窗內容 */
+        #modalContent {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useEffect } = React;
+
+        function App() {
+            useEffect(() => {
+                $(function () {
+                    //取得彈出視窗按鈕
+                    let mdBtn = $('.modalBtn');
+                    //遮罩背景透明度
+                    let overlayOpacity = 0.7;
+
+                    mdBtn.on('click', function (e) {
+                        //取消預設動作
+                        e.preventDefault();
+
+                        //取得超連結
+                        let setMdw = $(this);
+                        //取得超連結的href屬性值
+                        let setHref = setMdw.attr('href');
+                        //取得href對應id的內容
+                        let setSource = $(setHref).html();
+                        //取得視窗高度
+                        let curHeight = $(window).height();
+
+                        /*
+                    //動態生成的元素
+                    //遮罩元素
+                    <div id="mdOverlay"></div>
+                    //彈跳視窗 
+                    <div id="mdWindow">
+                        //關閉鈕
+                        <div className="mdClose">X</div>
+                        <div id="contentWrap">
+                        </div>
+                    </div>*/
+
+                        $('body').append('<div id="mdOverlay"></div><div id="mdWindow"><div className="mdClose">X</div><div id="contentWrap">內容</div></div>');
+                        $('#mdOverlay, #mdWindow').css({ display: 'block', opacity: '0' });
+                        $('#mdOverlay').css({ height: curHeight });
+                    });
+                });
+            }, []);
+
+            return (
+                <div id="wrapper">
+                    <div className="btnArea">
+                        <a href="#modalContent" className="modalBtn">彈出視窗</a>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut itaque, sequi mollitia odio reiciendis nihil rerum illum ducimus delectus doloremque velit debitis et a, optio sed numquam. Mollitia, recusandae quam.
+                        Totam ab corporis pariatur delectus reprehenderit, cumque porro laudantium, aspernatur doloribus veritatis iure autem cum cupiditate culpa nulla sunt facilis incidunt eius?.</p>
+                    <div id="modalContent">
+                        <h2>彈出視窗標題</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium vel doloribus qui est architecto? Iste voluptates voluptatum vitae cupiditate nemo!</p>
+                    </div>
+                </div>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+    <script src="./jQuery/js/jquery-1.11.3.min.js"></script>
+</body>
+
+</html>
