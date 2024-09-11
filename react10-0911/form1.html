@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 步驟一：載入 React, Bable -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function App() {
+            const { useState } = React;
+            // #1 使用者名稱
+            const [inputName, setInputName] = useState('test');
+
+            // #2 下拉清單 select
+            // 建立一個縣市名稱陣列清單
+            const arrCity = ['台北市', '新北市', '台中市'];
+            const [selCity, setSelCity] = useState('');
+
+            // JSX寫法
+            return (
+                <div>
+                    {/*#1 input*/}
+                    <label htmlFor="username">使用者名稱</label>
+                    <input type="text" id="username" value={inputName} onChange={e => {
+                        setInputName(e.target.value);
+                    }} /> - {inputName}
+                    <hr />
+                    {/*#2 下拉清單 select*/}
+                    <select name="" id="" value={selCity} onChange={e => {
+                        setSelCity(e.target.value);
+                    }} >                    
+                    <option value="" disabled>請選擇</option>
+                        {
+                            arrCity.map((city)=>{
+                                return <option value={city} key={city}>{city}</option>
+                            })
+                        }
+                    </select> - {selCity}
+                </div>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+
+</body>
+
+</html>
